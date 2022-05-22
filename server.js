@@ -29,7 +29,7 @@ var jwksClient = require('jwks-rsa');
 const { response } = require('express');
 var client = jwksClient({
   // EXCEPTION!  jwksUri comes from your single page application -> settings -> advanced settings -> endpoint -> the jwks one
-  jwksUri: 'https://dev-cb3cs25j.us.auth0.com/.well-known/jwks.json'
+  jwksUri: process.env.JWKS_URI
 });
 
 function getKey(header, callback) {
@@ -39,6 +39,13 @@ function getKey(header, callback) {
   });
 }
 // ---------------------------------------
+
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.get('/landing', (request, response) => {
 
