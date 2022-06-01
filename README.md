@@ -25,8 +25,6 @@ Remote Rate on the server end takes in inforamtion from the front end to save it
 - PC Users
   - You need to run mongoose `sudo mongod --dbpath db` on a seperate terminal
 
-- [Heroku Link]()
-
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 

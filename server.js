@@ -55,6 +55,7 @@ app.use(function (req, res, next) {
   next();
 });
 
+
 app.get('/landing', (request, response) => {
 
   try {
